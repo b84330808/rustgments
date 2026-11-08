@@ -1,0 +1,29 @@
+[package]
+name = "rustgments"
+version = "0.1.0"
+edition = "2021"
+license = "BSD-2-Clause"
+publish = false
+description = "A Rust engine for Pygments lexers: byte-identical output"
+repository = "https://github.com/b84330808/rustgments"
+
+[lib]
+name = "rustgments"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+python = ["dep:pyo3"]
+
+[dependencies]
+regex-automata = "0.4.13"
+regex-syntax = "0.8.5"
+fancy-regex = "=0.18.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["raw_value"] }
+pyo3 = { version = "0.25", optional = true, features = ["extension-module", "abi3-py39", "generate-import-lib"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+debug = false

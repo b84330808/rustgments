@@ -1,0 +1,1 @@
+import os; os.environ.get('RUSTGMENTS_INSTALL') == '1' and __import__('rustgments').install()

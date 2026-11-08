@@ -1,0 +1,9 @@
+/.venv/
+/target/
+__pycache__/
+*.pyd
+*.so
+/python/rustgments/_native*
+/bench/results/*.tmp
+/corpus/
+/dist/

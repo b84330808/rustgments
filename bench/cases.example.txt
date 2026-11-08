@@ -1,0 +1,5 @@
+# lexer<TAB>file, one per line; paths are relative to where bench.ps1 runs.
+# The published numbers used CPython's stdlib, jQuery, lodash, three.js, big JSON
+# files, git-completion.bash and sources from the cargo registry.
+PythonLexer	corpus/real/python/subprocess.py
+JavascriptLexer	corpus/real/js/jquery.js

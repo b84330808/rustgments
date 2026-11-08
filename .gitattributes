@@ -1,0 +1,3 @@
+ir/dfa.bin binary
+ir/pygments_ir.json -diff
+ir/pygments_ir.bulk -diff

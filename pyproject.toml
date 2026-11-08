@@ -1,0 +1,33 @@
+[build-system]
+requires = ["maturin>=1.5,<2"]
+build-backend = "maturin"
+
+[project]
+name = "rustgments"
+version = "0.1.0"
+description = "A Rust engine for Pygments: byte-identical output, much faster when you highlight a lot"
+readme = "README.md"
+keywords = ["pygments", "syntax-highlighting", "rust"]
+requires-python = ">=3.9"
+license = { text = "BSD-2-Clause" }
+dependencies = ["pygments>=2.21"]
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Rust",
+    "Topic :: Text Processing :: Filters",
+]
+
+[project.urls]
+Repository = "https://github.com/b84330808/rustgments"
+
+[tool.maturin]
+features = ["python"]
+python-source = "python"
+module-name = "rustgments._native"
+# Opt-in drop-in mode without code changes: RUSTGMENTS_INSTALL=1 (see
+# python/rustgments-autoinstall.pth).
+include = [{ path = "python/rustgments-autoinstall.pth", format = "wheel" }]
+
+[project.entry-points."mkdocs.plugins"]
+rustgments = "rustgments.mkdocs_plugin:RustgmentsPlugin"
